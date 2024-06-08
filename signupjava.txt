@@ -1,0 +1,124 @@
+package com.example.turf;
+
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class SIGNUP extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_signup);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+}<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/r"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="168dp"
+            android:layout_height="168dp"
+            android:src="@drawable/baseline_account_circle_24" />
+
+        <EditText
+            android:id="@+id/PhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/round_corner"
+            android:hint=" PhoneNumber"
+            android:inputType="text"
+            android:padding="1dp"
+            android:drawableRight="@drawable/call2"
+            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:textSize="25sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/otp"
+            android:text="continue"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:layout_margin="35dp"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:hint=" OR"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="25sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="380dp"
+            android:layout_height="66dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/white"
+            android:padding="5dp"
+            android:text="continue with Google"
+            android:drawableStart="@drawable/g2"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:hint=" Don't have an account?"
+            android:layout_marginRight="6dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
+
+
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:ems="100"
+            android:inputType="text"
+            android:text="Sign up"
+            android:textSize="27dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:hint="Skip>"
+            android:layout_marginTop="35dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
